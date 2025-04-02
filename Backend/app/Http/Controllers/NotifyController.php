@@ -12,6 +12,8 @@ class NotifyController extends BaseController
     public function getHospitalData()
     {
         try {
+
+
             // ดึงข้อมูลทั้งหมดจาก tb_hospital
             $hospitals = DB::table('tb_hospital')->get();
 

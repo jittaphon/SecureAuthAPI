@@ -14,3 +14,6 @@ $router->options('/{any:.*}', function () {
 });
 
 $router->get('/api/get-hospitals', 'NotifyController@getHospitalData');
+$router->get('/api/get-users', 'UserController@getUser');
+$router->post('/api/register', 'UserController@InsertNewUser');
+$router->delete('/api/delete-user', 'UserController@InsertNewUser');
