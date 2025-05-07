@@ -173,7 +173,7 @@
             const data = Object.fromEntries(formData.entries());
             try {
                 console.log(data);
-                axios.get('http://localhost:8000/api/get-users').then(function(response) {
+                axios.get('http://localhost:8000/api/get-users', data).then(function(response) {
                     console.log(response.data);
                 })
             } catch (error) {

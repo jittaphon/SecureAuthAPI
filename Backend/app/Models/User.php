@@ -13,5 +13,5 @@ class User extends Model
 {
     protected $table = 'users';
     protected $fillable = ['name', 'last_name', 'email', 'password', 'dob', 'gender', 'google_id', 'auth_provider'];
-    public $timestamps = true;
+    public $timestamps = true; // ต้องมี created_at, updated_at ในฐานข้อมูล
 }

@@ -13,7 +13,12 @@ $router->options('/{any:.*}', function () {
     return $response;
 });
 
-$router->get('/api/get-hospitals', 'NotifyController@getHospitalData');
+$router->group(['middleware' => 'auth'], function () use ($router) {
+    $router->get('/api/get-hospitals', 'HosController@getHospitalData');
+});
+
+
+$router->post('/api/login', 'UserController@login');
 $router->get('/api/get-users', 'UserController@getUser');
 $router->post('/api/register', 'UserController@InsertNewUser');
-$router->delete('/api/delete-user', 'UserController@InsertNewUser');
+$router->delete('/api/delete-user/{id}', 'UserController@deleteUser');
